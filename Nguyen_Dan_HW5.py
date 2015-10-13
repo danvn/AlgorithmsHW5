@@ -18,8 +18,7 @@ each source node in the DAG and keep track of the maximum depth you reach.
 
 """
 
-import sys
-import csv
+import networkx as nx
 
 
 
@@ -43,8 +42,12 @@ def main():
         
     print alphaList
     
+    G=nx.Graph()
     
-    
+    contents = '''
+    <html> fsdlkjfksdlfjksd jkfkjlsd
+    '''
+    print contents
     
     
     
