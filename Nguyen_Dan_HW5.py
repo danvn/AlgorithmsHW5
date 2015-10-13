@@ -44,11 +44,9 @@ def main():
     
     G=nx.Graph()
     
-    contents = '''
-    <html> fsdlkjfksdlfjksd jkfkjlsd
-    '''
-    print contents
     
+    print contents
+    fsdfssfdfds
     
     
     
