@@ -16,10 +16,11 @@ word (you might want to collapse words into a single node when it makes sense to
 and an edge from word x to word y if y can follow x in a chain. Then run DFS from
 each source node in the DAG and keep track of the maximum depth you reach.
 
+https://networkx.github.io/documentation/latest/tutorial/tutorial.html#nodes
+
 """
 
-import sys
-import csv
+import networkx as nx
 
 
 
@@ -42,6 +43,18 @@ def main():
         alphaList.append("".join(sorted(List[i])))
         
     print alphaList
+    
+    G = nx.Graph()
+    
+    for i in range(0 , len(alphaList)):
+        G.add_node(i , word = alphaList[i])
+        
+    print G.node[0]['word']
+    
+    if (len(G.node[3]['word']) == (len(G.node[2]['word'])+1)):
+        print "length of dog is 1 less than dogs"
+
+    
     
     
     
