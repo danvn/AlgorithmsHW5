@@ -46,7 +46,6 @@ def main():
     
     
     print contents
-    fsdfssfdfds
     
     
     
