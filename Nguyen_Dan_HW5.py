@@ -24,7 +24,6 @@ import networkx as nx
 
 
 
-
 def main():
     List = open("testlist.txt").readlines()             # Open text file
     #print wordList
@@ -40,7 +39,7 @@ def main():
     alphaList = []
     
     for i in range (0, len(List)):
-        alphaList.append("".join(sorted(List[i])))
+        alphaList.append("".join(sorted(List[i])))      # Sorted each word in the list, but by character: CAT -> ACT
         
     print alphaList
     
@@ -53,10 +52,32 @@ def main():
     
     if (len(G.node[3]['word']) == (len(G.node[2]['word'])+1)):
         print "length of dog is 1 less than dogs"
-
+        
+    for i in range(0, G.number_of_nodes()-1):
+        
+        if ( ( (len(G.node[i]['word'])+1)  == len(G.node[i+1]['word']) ) and (G.node[i]['word'] in G.node[i+1]['word'])):
+            print G.node[i]['word'], G.node[i+1]['word']
+            G.add_edge( i, (i+1) )
+        
+    # print G.neighbors(3)
     
     
+    print "TEST 2 DOUBLE LOOP!"
+    for i in range(0, G.number_of_nodes()-1):
+        
+        for u in range(0, G.number_of_nodes()-1):
+            
+            if ( ( (len(G.node[i]['word'])+1)  == len(G.node[u+1]['word']) ) and (G.node[i]['word'] in G.node[u+1]['word'])):
+                print G.node[i]['word'], G.node[u+1]['word']
+                G.add_edge( i, (u+1) )
+                i = i+1
+   
     
+    #for i in range(0, G.number_of_edges):
+                
+    
+    
+   
     
     
     
